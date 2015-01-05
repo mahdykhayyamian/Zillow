@@ -1,0 +1,36 @@
+﻿@model SimpleProperty
+
+<tr>
+    <td class="td-small td-header">
+        Zillow Property ID
+    </td>
+
+    <td class="td-medium td-header">
+        Links
+    </td>
+
+    <td class="td-wide td-header">
+        Full Address
+    </td>
+
+    @if (@Model.zestimate != null)
+    {
+        <td class="td-extra-wide td-header">
+            Zestimate data
+        </td>
+    }
+
+    @if (@Model.rentzestimate != null)
+    {
+        <td class="td-extra-wide td-header">
+            Rent Zestimate Data
+        </td>
+    }
+
+    @if (@Model.localRealEstate != null)
+    {
+        <td class="td-extra-wide td-header">
+            Local Real Estate
+        </td>
+    }
+ </tr>

@@ -1,0 +1,66 @@
+﻿@model SimpleProperty
+
+<td class="td-small">
+    @Model.zpid
+</td>
+
+<td class="td-medium">
+    <ul>
+        <li><a href="@Model.links.homedetails">Home Details</a></li>
+        <li><a href="@Model.links.graphsanddata">Chart Data Page</a></li>
+        <li><a href="@Model.links.mapthishome">Map This Home</a> </li>
+        <li><a href="@Model.links.comparables">Similar Sale Page</a></li>
+    </ul>
+</td>
+
+<td class="td-wide">
+    <ul>
+        <li>@Zillow.DataModels.Utility.CreateAddress(@Model.address)</li>
+        <li><span class="thick">latitude : </span>@Model.address.latitude</li>
+        <li><span class="thick">longitude: </span>@Model.address.longitude</li>
+    </ul>
+</td>
+
+@if (@Model.zestimate != null)
+{
+    <td class="td-extra-wide">
+        <ul>
+            <li><b>Zestimate  :</b>@Zillow.DataModels.Utility.FormatDollar(@Model.zestimate.amount.Value)</li>
+            <li><span class="thick">Last updated date :</span>@Model.zestimate.lastupdated</li>
+            <li><span class="thick">30-day change  : </span>@Zillow.DataModels.Utility.FormatDollar(@Model.zestimate.valueChange.Value)</li>
+            <li><span class="thick">high  : </span>@Zillow.DataModels.Utility.FormatDollar(Model.zestimate.valuationRange.high.Value)</li>
+            <li><span class="thick">low  : </span>@Zillow.DataModels.Utility.FormatDollar(@Model.zestimate.valuationRange.low.Value)</li>
+            <li><span class="thick">Percentile : </span> @Model.zestimate.percentile</li>
+        </ul>
+    </td>
+}
+
+@if (@Model.rentzestimate != null)
+{
+    <td class="td-extra-wide">
+        <ul>
+            <li><b>Zestimate  :</b>@Zillow.DataModels.Utility.FormatDollar(@Model.rentzestimate.amount.Value)</li>
+            <li><span class="thick">Last updated date :</span>@Model.rentzestimate.lastupdated</li>
+            <li><span class="thick">30-day change  : </span>@Zillow.DataModels.Utility.FormatDollar(@Model.rentzestimate.valueChange.Value)</li>
+            <li><span class="thick">high  : </span>@Zillow.DataModels.Utility.FormatDollar(@Model.rentzestimate.valuationRange.high.Value)</li>
+            <li><span class="thick">low  : </span>@Zillow.DataModels.Utility.FormatDollar(@Model.rentzestimate.valuationRange.low.Value)</li>
+            <li><span class="thick">Percentile : </span> @Model.rentzestimate.percentile</li>
+        </ul>
+    </td>
+}
+
+@if (Model.localRealEstate != null)
+{
+    <td class="td-extra-wide">
+        @foreach (var item in Model.localRealEstate)
+        {
+            <ul>
+                <li><span class="thick">Value Index : </span>@Zillow.DataModels.Utility.FormatDollar(@item.zindexValue)</li>
+                <li><span class="thick">Value Index 1-Yr change : </span>@Zillow.DataModels.Utility.FormatDollar(@item.zindexOneYearChange)</li>
+                <li><a href="@item.links.overview">Region overview Page</a></li>
+                <li><a href="@item.links.forSaleByOwner">For Sale by Owner Homes Page</a></li>
+                <li><a href="@item.links.forSale">For Sale Homes Page</a></li>
+            </ul>
+        }
+    </td>
+}

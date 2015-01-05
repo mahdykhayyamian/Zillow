@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zillow", "Zillow\Zillow.csproj", "{2553E254-BCD2-4516-9513-38C19A03649C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{42E19EE0-EE3D-4E0C-A461-B78902669A48}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{7A8CFAAE-1978-42D7-983E-C9A426A68DCF}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\Zillow-WAWS-dev.json = PublishScripts\Configurations\Zillow-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{085B6692-69B0-41F7-9A94-5AB1B7146E3E}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2553E254-BCD2-4516-9513-38C19A03649C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2553E254-BCD2-4516-9513-38C19A03649C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2553E254-BCD2-4516-9513-38C19A03649C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2553E254-BCD2-4516-9513-38C19A03649C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7A8CFAAE-1978-42D7-983E-C9A426A68DCF} = {42E19EE0-EE3D-4E0C-A461-B78902669A48}
+	EndGlobalSection
+EndGlobal
